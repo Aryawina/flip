@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  background: #3081D0;
+}
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card {
+  cursor: pointer;
+  width: 340px;
+  height: 480px;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+  transform-style: preserve-3d;
+}
+.front img {
+  height: 100%;
+  z-index: -1;
+opacity: 0.9;
+}
+.front {
+  border-radius: 10px;
+  transform: perspective(600px) rotateY(0deg);
+}
+.back {
+  transform: perspective(600px) rotateY(180deg);
+  border-radius: 10px;
+}
+.back img {
+  height: 100%;
+  opacity: .7;
+}
+.back-content {
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+.sm {
+  margin: 20px 0;
+}
+.sm span {
+  position: absolute;
+  padding: 80px;
+  left: 40px;
+  font-size: 20px;
+  font-family: "Righteous", sans-serif;
+  color: yellow;
+}
+.sm a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+  border-radius: 50%;
+  position: relative;
+  top: 110px;
+}
+.sm a:hover {
+  background: #2c3e50;
+}
+.card:hover .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover .back {
+  transform: perspective(600px) rotateY(0deg);
+}
+.front p {
+  position: relative;
+  z-index: -1;
+  color: black;
+}
+.kotak {
+  z-index: 1;
+  position: absolute;
+  left: 100px;
+  text-transform: uppercase;
+  top: 30px;
+  width: 100%;
+  height: 200%;
+}
+.back-content p {
+  color: #ffa732;
+  top: 10px;
+  font-size: 15px;
+  font-family: Times New Roman;
+}
